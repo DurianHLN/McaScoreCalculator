@@ -1,6 +1,7 @@
 from anvil import *
 import google.auth, google.drive, google.mail
 from google.drive import app_files
+import calculations
 
 class McaCalculator (McaCalculatorTemplate):
   def print_error(self, errormsg):
@@ -19,22 +20,22 @@ class McaCalculator (McaCalculatorTemplate):
   def button_submit_click (self, **event_args):
     proceed = True
     try:
-      gpa = self.get_gpa(self.input_gpa)
+      gpa = calculations.get_gpa(self.input_gpa)
     except ValueError:
       proceed = self.print_error("Not a valid GPA you alien.")
       
     try:
-      tests = self.get_tests(self.input_sat, self.input_act)
+      tests = calculations.get_tests(self.input_sat, self.input_act)
     except (ValueError, KeyError):
       proceed = self.print_error("Invalid test score(s) you dingus")
       
     try:
-      rigor = self.get_rigor(self.input_math, self.input_science, self.input_english, self.input_foreign, self.input_perf)
+      rigor = calculations.get_rigor(self.input_math, self.input_science, self.input_english, self.input_foreign, self.input_perf)
     except ValueError:
       proceed = self.print_error("Not valid # of semesters you weirdo")
       
     try:
-      ecs = self.get_ecs(self.input_workhrs, self.input_echrs, self.check_workmajor, self.check_leader)
+      ecs = calculations.get_ecs(self.input_workhrs, self.input_echrs, self.check_workmajor, self.check_leader)
     except ValueError:
       proceed = self.print_error("Not valid # of hours you nincompoop")
     if proceed:

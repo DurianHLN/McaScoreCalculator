@@ -12,7 +12,7 @@ def get_gpa(input_gpa):
   if gpa > 2250:
     gpa = 2250
   return gpa
-def get_tests(input_sat, input_sat):
+def get_tests(input_sat, input_act):
   if not input_act.text:
     act = 0
   if not input_sat.text:

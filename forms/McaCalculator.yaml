@@ -1,0 +1,200 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"AYFBYT":5,"SKIXSP":3,"GZWTIJ":4,"WIKVSR":5,"SEOOLS":3,"DENXGK":4}'}
+components:
+- type: Label
+  properties: {width: default, align: center, border: '', foreground: '', visible: true,
+    text: MCA Score Calculator (for Cal Poly), font_size: 24, font: Cambria, spacing_above: small,
+    spacing_below: small, italic: false, background: '', bold: true, underline: true}
+  name: label_1
+  layout_properties: {grid_position: 'EFDNKW,DCOTER'}
+- type: Label
+  properties: {width: default, align: center, border: '', foreground: '', visible: false,
+    text: '', font_size: 18, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false}
+  name: label_errors
+  layout_properties: {grid_position: 'FOMZOL,JDOWFD'}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'Calculate your weighted (9-11) GPA. If you don''t know it yet, use this
+      link.', font_size: 14, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false}
+  name: label_csulink
+  layout_properties: {grid_position: 'LMOLIT,ALNSQL UGRZCW,YQLWMB'}
+  event_bindings: {show: label_csulink_show}
+- type: Link
+  properties:
+    width: default
+    url: ''
+    align: left
+    border: ''
+    foreground: ''
+    repeat_component: ''
+    visible: true
+    text: GPA Calculator (cred. CSU)
+    font_size: 14
+    row_spacing: 10
+    font: ''
+    spacing_above: none
+    spacing_below: none
+    italic: false
+    data: {}
+    background: ''
+    bold: false
+    underline: false
+  name: link_csu
+  layout_properties: {grid_position: 'LMOLIT,ALNSQL ASFZXE,ZHZGJM'}
+  event_bindings: {click: link_1_click}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: Put your GPA in here,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: input_gpa
+  layout_properties: {grid_position: 'LMOLIT,OVLNBM'}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'What is your best SAT/ACT score? If you took both tests but don''t know
+      which score is better, input both and I''ll do your dirty work for you you bastard',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: label_test
+  layout_properties: {grid_position: 'CQAZOL,WMQYUA'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: NEW SAT Score,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: input_sat
+  layout_properties: {grid_position: 'CQAZOL,VVLCDQ FHXVSA,HRRFMQ'}
+  event_bindings: {change: input_sat_change}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: ACT Score,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: input_act
+  layout_properties: {grid_position: 'CQAZOL,VVLCDQ SIRQDC,JSXGNL'}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'Class Rigor (9-12): How many SEMESTERS of classes did you take?', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: label_rigor
+  layout_properties: {grid_position: 'AZGPTT,XMEZAZ'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of MATH
+      Semesters', border: '', enabled: true, foreground: '', visible: true, text: '',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: input_math
+  layout_properties: {grid_position: 'AZGPTT,YPETJG RRLPCD,GMTMCH'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of SCIENCE
+      Semesters', border: '', enabled: true, foreground: '', visible: true, text: '',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: input_science
+  layout_properties: {grid_position: 'AZGPTT,YPETJG DPJMXT,HRDPWZ'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of ENGLISH
+      Semesters', border: '', enabled: true, foreground: '', visible: true, text: '',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: input_english
+  layout_properties: {grid_position: 'AZGPTT,YOSFMK TYPAFM,EZYZXD'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of FOREIGN
+      LANGUAGE Semesters', border: '', enabled: true, foreground: '', visible: true,
+    text: '', font_size: 14, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false}
+  name: input_foreign
+  layout_properties: {grid_position: 'AZGPTT,YOSFMK VCOGXZ,EIVRLG'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of Visual/Performing
+      Arts Semesters', border: '', enabled: true, foreground: '', visible: true, text: '',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: input_perf
+  layout_properties: {grid_position: 'AZGPTT,ZGYJRF'}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'How many hours did you work per week?', font_size: 14, font: '', spacing_above: small,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false}
+  name: label_work
+  layout_properties: {grid_position: 'ICOINW,AYFBYT'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of hours
+      worked/week', border: '', enabled: true, foreground: '', visible: true, text: '',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: input_workhrs
+  layout_properties: {grid_position: 'ICOINW,SKIXSP'}
+- type: CheckBox
+  properties: {width: default, align: left, border: '', enabled: true, foreground: '',
+    visible: true, text: 'Work is major related?', font_size: 14, font: '', spacing_above: small,
+    spacing_below: small, italic: false, background: '', bold: false, checked: false,
+    underline: false}
+  name: check_workmajor
+  layout_properties: {grid_position: 'ICOINW,GZWTIJ'}
+  event_bindings: {change: check_workmajor_change}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'How many hours did you do community service/extra curriculars per week?',
+    font_size: 14, font: '', spacing_above: small, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: label_ec
+  layout_properties: {grid_position: 'HGDEPY,WIKVSR'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: '# of hours/week',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: input_echrs
+  layout_properties: {grid_position: 'HGDEPY,SEOOLS'}
+- type: CheckBox
+  properties: {width: default, align: left, border: '', enabled: true, foreground: '',
+    visible: true, text: 'Did you hold a leadership position?', font_size: 14, font: '',
+    spacing_above: small, spacing_below: small, italic: false, background: '', bold: false,
+    checked: false, underline: false}
+  name: check_leader
+  layout_properties: {grid_position: 'HGDEPY,DENXGK'}
+- type: Label
+  properties: {width: default, align: left, border: '', foreground: '', visible: true,
+    text: 'Want to help me collect info? Then (optionally) put your name!', font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false}
+  name: label_name
+  layout_properties: {grid_position: 'UABQFN,DBOWKY'}
+- type: TextBox
+  properties: {width: default, align: left, hide_text: false, placeholder: 8), border: '',
+    enabled: true, foreground: '', visible: true, text: '', font_size: 14, font: '',
+    spacing_above: small, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false}
+  name: input_name
+  layout_properties: {grid_position: 'UABQFN,UHQAIG'}
+- type: Button
+  properties: {width: default, align: center, border: '', enabled: true, foreground: '',
+    visible: true, text: Submit, font_size: 14, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false}
+  name: button_submit
+  layout_properties: {grid_position: 'UIEXDL,RPOZRQ'}
+  event_bindings: {click: button_submit_click}
+- type: Label
+  properties: {width: default, align: center, border: '', foreground: '', visible: false,
+    text: '', font_size: 24, font: '', spacing_above: small, spacing_below: small,
+    italic: false, background: '', bold: true, underline: false}
+  name: label_result
+  layout_properties: {grid_position: 'KJWEKR,OOWYTD'}
+- type: Label
+  properties: {width: default, align: right, border: '', foreground: '', visible: true,
+    text: Built in Python and Javascript, font_size: 14, font: '', spacing_above: small,
+    spacing_below: none, italic: false, background: '', bold: false, underline: false}
+  name: label_3
+  layout_properties: {grid_position: 'QMXPVF,DDPSKT'}
+- type: Label
+  properties: {width: default, align: right, border: '', foreground: '', visible: true,
+    text: By Darian Nguyen @ github.DurianHLN, font_size: 14, font: '', spacing_above: none,
+    spacing_below: none, italic: false, background: '', bold: false, underline: false}
+  name: label_2
+  layout_properties: {grid_position: 'MAWPSG,XYOFNF'}
